@@ -2,10 +2,9 @@ package ru.geekbrains.calc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.widget.Toast;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         this.init();
     }
 
@@ -31,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(instanceState);
         this.data.add(instanceState.getString("EXPRESSION"));
         this.data.setMemory(instanceState.getString("MEMORY"));
-
-        Toast.makeText(this, data.getExpression(), Toast.LENGTH_SHORT).show();
+        TextView screen = (TextView) findViewById(R.id.view_screen);
+        screen.setText(instanceState.getString("EXPRESSION"));
     }
 
-    protected void init() {
+    private void init() {
         Button button_0 = findViewById(R.id.button_0);
         Button button_1 = findViewById(R.id.button_1);
         Button button_2 = findViewById(R.id.button_2);

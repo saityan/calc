@@ -14,6 +14,23 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_screen"
+                android:layout_span="4"
+                android:gravity="end|bottom"
+                android:layout_height="@dimen/button_size"
+                android:background="@color/button"
+                android:text=""
+                android:textColor="@color/text"
+                android:textSize="@dimen/button_text" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_7"
             android:layout_width="@dimen/button_size"

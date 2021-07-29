@@ -18,7 +18,10 @@ class Data {
 
     String getMemory () { return this.memory; }
 
-    void setMemory (String memory) { this.memory = memory; }
+    void setMemory (String memory) {
+        if (memory.length() > 0)
+            this.memory = memory;
+    }
 
     void compute() { /*add regex here*/ }
 

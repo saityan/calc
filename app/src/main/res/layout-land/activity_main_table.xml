@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_columnSpan="4"
+    android:layout_columnSpan="7"
     android:gravity="center"
     android:orientation="vertical"
     android:background="@drawable/gradient">
@@ -16,13 +16,152 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/view_screen"
-                android:layout_span="4"
+                android:layout_span="7"
                 android:gravity="end|bottom"
-                android:layout_height="@dimen/button_size"
                 android:background="@color/button"
                 android:text=""
                 android:textColor="@color/text"
                 android:textSize="@dimen/button_text" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_1"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_1"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_2"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_2"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_3"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_3"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_memory"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_memory"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_restore"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_restore"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_subtract"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_subtract"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_backspace"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_backspace"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_4"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_4"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_5"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_5"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_6"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_6"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_divide"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_divide"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_multiply"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_multiply"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_add"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_add"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_equal"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+             android:backgroundTint="@color/button"
+            android:text="@string/_equal"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
 
     </TableRow>
 
@@ -59,171 +198,20 @@
             android:textSize="@dimen/button_text" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_divide"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:backgroundTint="@color/button"
-            android:text="@string/_divide"
-            android:textColor="@color/text"
-            android:textSize="@dimen/button_text" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_4"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_4"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_5"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_5"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_6"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_6"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_multiply"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_multiply"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_1"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_1"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_2"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_2"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_3"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_3"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_subtract"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_subtract"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_0"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
             android:text="@string/_0"
-            android:textSize="@dimen/button_text"
             android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
+            android:textSize="@dimen/button_text" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_point"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
             android:text="@string/_point"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_equal"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_equal"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_add"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:text="@string/_add"
-            android:textSize="@dimen/button_text"
-            android:textColor="@color/text"
-            android:backgroundTint="@color/button"/>
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_backspace"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:backgroundTint="@color/button"
-            android:text="@string/_backspace"
-            android:textColor="@color/text"
-            android:textSize="@dimen/button_text" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_restore"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:backgroundTint="@color/button"
-            android:text="@string/_restore"
-            android:textColor="@color/text"
-            android:textSize="@dimen/button_text" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_memory"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:backgroundTint="@color/button"
-            android:text="@string/_memory"
             android:textColor="@color/text"
             android:textSize="@dimen/button_text" />
 
@@ -232,8 +220,11 @@
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:backgroundTint="@color/button"
+            android:layout_span="2"
             android:text="@string/_clear"
             android:textColor="@color/text"
             android:textSize="@dimen/button_text" />
+
     </TableRow>
+
 </TableLayout>

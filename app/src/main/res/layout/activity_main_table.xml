@@ -177,4 +177,46 @@
             android:textColor="@color/text"
             android:backgroundTint="@color/button"/>
     </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_backspace"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_backspace"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_restore"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_restore"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_memory"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_memory"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_clear"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:backgroundTint="@color/button"
+            android:text="@string/_clear"
+            android:textColor="@color/text"
+            android:textSize="@dimen/button_text" />
+    </TableRow>
 </TableLayout>

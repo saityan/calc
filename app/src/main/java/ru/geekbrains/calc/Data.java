@@ -2,18 +2,35 @@ package ru.geekbrains.calc;
 
 class Data {
     private StringBuilder expression;
+    private String memory;
 
     Data() {
         this.expression = new StringBuilder();
-    }
-
-    Data(String s) {
-        this.expression = new StringBuilder().append(s);
+        this.memory = "";
     }
 
     void add(String s) {
-        this.expression.append(s);
+        if (s.length() > 0)
+            this.expression.append(s);
     }
 
-    String get () { return this.expression.toString(); }
+    String getExpression () { return this.expression.toString(); }
+
+    String getMemory () { return this.memory; }
+
+    void setMemory (String memory) { this.memory = memory; }
+
+    void compute() { /*add regex here*/ }
+
+    void clear() { this.expression.setLength(0); }
+
+    void restore() {
+        if (this.memory.length() > 0)
+        this.expression.append(this.memory);
+    }
+
+    void backspace() {
+        if (this.expression.length() > 0)
+            this.expression.setLength(this.expression.length() - 1);
+    }
 }

@@ -22,15 +22,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
-        instanceState.putString("Expression", this.data.get());
+        instanceState.putString("EXPRESSION", this.data.getExpression());
+        instanceState.putString("MEMORY", this.data.getMemory());
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
         super.onRestoreInstanceState(instanceState);
-        this.data.add(instanceState.getString("Expression"));
+        this.data.add(instanceState.getString("EXPRESSION"));
+        this.data.setMemory(instanceState.getString("MEMORY"));
 
-        Toast.makeText(this, data.get(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, data.getExpression(), Toast.LENGTH_SHORT).show();
     }
 
     protected void init() {
@@ -44,28 +46,36 @@ public class MainActivity extends AppCompatActivity {
         Button button_7 = findViewById(R.id.button_7);
         Button button_8 = findViewById(R.id.button_8);
         Button button_9 = findViewById(R.id.button_9);
-        Button button_add = findViewById(R.id.button_add);
-        Button button_subtract = findViewById(R.id.button_subtract);
-        Button button_multiply = findViewById(R.id.button_multiply);
-        Button button_divide = findViewById(R.id.button_divide);
-        Button button_equal = findViewById(R.id.button_equal);
-        Button button_point = findViewById(R.id.button_point);
+        Button buttonAdd = findViewById(R.id.button_add);
+        Button buttonSubtract = findViewById(R.id.button_subtract);
+        Button buttonMultiply = findViewById(R.id.button_multiply);
+        Button buttonDivide = findViewById(R.id.button_divide);
+        Button buttonPoint = findViewById(R.id.button_point);
+        Button buttonClear = findViewById(R.id.button_clear);
+        Button buttonBackspace = findViewById(R.id.button_backspace);
+        Button buttonMemory = findViewById(R.id.button_memory);
+        Button buttonRestore = findViewById(R.id.button_restore);
+        Button buttonEqual = findViewById(R.id.button_equal);
 
-        button_0.setOnClickListener(v -> data.add("0"));
-        button_1.setOnClickListener(v -> data.add("1"));
-        button_2.setOnClickListener(v -> data.add("2"));
-        button_3.setOnClickListener(v -> data.add("3"));
-        button_4.setOnClickListener(v -> data.add("4"));
-        button_5.setOnClickListener(v -> data.add("5"));
-        button_6.setOnClickListener(v -> data.add("6"));
-        button_7.setOnClickListener(v -> data.add("7"));
-        button_8.setOnClickListener(v -> data.add("8"));
-        button_9.setOnClickListener(v -> data.add("9"));
-        button_add.setOnClickListener(v -> data.add("+"));
-        button_subtract.setOnClickListener(v -> data.add("-"));
-        button_multiply.setOnClickListener(v -> data.add("*"));
-        button_divide.setOnClickListener(v -> data.add("/"));
-        button_equal.setOnClickListener(v -> data.add("="));
-        button_point.setOnClickListener(v -> data.add("."));
+        button_0.setOnClickListener(v -> this.data.add("0"));
+        button_1.setOnClickListener(v -> this.data.add("1"));
+        button_2.setOnClickListener(v -> this.data.add("2"));
+        button_3.setOnClickListener(v -> this.data.add("3"));
+        button_4.setOnClickListener(v -> this.data.add("4"));
+        button_5.setOnClickListener(v -> this.data.add("5"));
+        button_6.setOnClickListener(v -> this.data.add("6"));
+        button_7.setOnClickListener(v -> this.data.add("7"));
+        button_8.setOnClickListener(v -> this.data.add("8"));
+        button_9.setOnClickListener(v -> this.data.add("9"));
+        buttonAdd.setOnClickListener(v -> this.data.add("+"));
+        buttonSubtract.setOnClickListener(v -> this.data.add("-"));
+        buttonMultiply.setOnClickListener(v -> this.data.add("*"));
+        buttonDivide.setOnClickListener(v -> this.data.add("/"));
+        buttonPoint.setOnClickListener(v -> this.data.add("."));
+        buttonClear.setOnClickListener(v -> this.data.clear());
+        buttonBackspace.setOnClickListener(v -> this.data.backspace());
+        buttonMemory.setOnClickListener(v -> this.data.setMemory(this.data.getExpression()));
+        buttonRestore.setOnClickListener(v -> this.data.restore());
+        buttonEqual.setOnClickListener(v -> this.data.compute());
     }
 }

@@ -20,4 +20,5 @@
     <string name="_restore">MR</string>
     <string name="_memory">M</string>
     <string name="_backspace">⬅</string>
+    <string name="mode">day mode</string>
 </resources>

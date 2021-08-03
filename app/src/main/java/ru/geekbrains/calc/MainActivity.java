@@ -2,7 +2,11 @@ package ru.geekbrains.calc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,6 +22,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.darkmode, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (getResources().getString(R.string.mode).equals("day mode"))
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        else
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        return true;
+    }
+
+    @Override
     protected void onSaveInstanceState(@NonNull Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
         instanceState.putString("EXPRESSION", this.data.getExpression());
@@ -29,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(instanceState);
         this.data.add(instanceState.getString("EXPRESSION"));
         this.data.setMemory(instanceState.getString("MEMORY"));
-        TextView screen = (TextView) findViewById(R.id.view_screen);
+        TextView screen = findViewById(R.id.view_screen);
         screen.setText(instanceState.getString("EXPRESSION"));
     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LessonTwo</string>
+    <string name="app_name">Calculator</string>
     <string name="_add">＋</string>
     <string name="_subtract">–</string>
     <string name="_multiply">╳</string>

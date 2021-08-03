@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(instanceState);
         this.data.add(instanceState.getString("EXPRESSION"));
         this.data.setMemory(instanceState.getString("MEMORY"));
-        TextView screen = (TextView) findViewById(R.id.view_screen);
+        TextView screen = findViewById(R.id.view_screen);
         screen.setText(instanceState.getString("EXPRESSION"));
     }
 

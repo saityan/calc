@@ -12,13 +12,35 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Data data = new Data();
+    private Data data;
+    private TextView screen;
+    private Button button_0;
+    private Button button_1;
+    private Button button_2;
+    private Button button_3;
+    private Button button_4;
+    private Button button_5;
+    private Button button_6;
+    private Button button_7;
+    private Button button_8;
+    private Button button_9;
+    private Button buttonAdd;
+    private Button buttonSubtract;
+    private Button buttonMultiply;
+    private Button buttonDivide;
+    private Button buttonPoint;
+    private Button buttonClear;
+    private Button buttonBackspace;
+    private Button buttonMemory;
+    private Button buttonRestore;
+    private Button buttonEqual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.init();
+        this.listener();
     }
 
     @Override
@@ -53,28 +75,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        TextView screen = findViewById(R.id.view_screen);
-        Button button_0 = findViewById(R.id.button_0);
-        Button button_1 = findViewById(R.id.button_1);
-        Button button_2 = findViewById(R.id.button_2);
-        Button button_3 = findViewById(R.id.button_3);
-        Button button_4 = findViewById(R.id.button_4);
-        Button button_5 = findViewById(R.id.button_5);
-        Button button_6 = findViewById(R.id.button_6);
-        Button button_7 = findViewById(R.id.button_7);
-        Button button_8 = findViewById(R.id.button_8);
-        Button button_9 = findViewById(R.id.button_9);
-        Button buttonAdd = findViewById(R.id.button_add);
-        Button buttonSubtract = findViewById(R.id.button_subtract);
-        Button buttonMultiply = findViewById(R.id.button_multiply);
-        Button buttonDivide = findViewById(R.id.button_divide);
-        Button buttonPoint = findViewById(R.id.button_point);
-        Button buttonClear = findViewById(R.id.button_clear);
-        Button buttonBackspace = findViewById(R.id.button_backspace);
-        Button buttonMemory = findViewById(R.id.button_memory);
-        Button buttonRestore = findViewById(R.id.button_restore);
-        Button buttonEqual = findViewById(R.id.button_equal);
+        this.data = new Data();
+        this.screen = findViewById(R.id.view_screen);
+        this.button_0 = findViewById(R.id.button_0);
+        this.button_1 = findViewById(R.id.button_1);
+        this.button_2 = findViewById(R.id.button_2);
+        this.button_3 = findViewById(R.id.button_3);
+        this.button_4 = findViewById(R.id.button_4);
+        this.button_5 = findViewById(R.id.button_5);
+        this.button_6 = findViewById(R.id.button_6);
+        this.button_7 = findViewById(R.id.button_7);
+        this.button_8 = findViewById(R.id.button_8);
+        this.button_9 = findViewById(R.id.button_9);
+        this.buttonAdd = findViewById(R.id.button_add);
+        this.buttonSubtract = findViewById(R.id.button_subtract);
+        this.buttonMultiply = findViewById(R.id.button_multiply);
+        this.buttonDivide = findViewById(R.id.button_divide);
+        this.buttonPoint = findViewById(R.id.button_point);
+        this.buttonClear = findViewById(R.id.button_clear);
+        this.buttonBackspace = findViewById(R.id.button_backspace);
+        this.buttonMemory = findViewById(R.id.button_memory);
+        this.buttonRestore = findViewById(R.id.button_restore);
+        this.buttonEqual = findViewById(R.id.button_equal);
+    }
 
+    private void listener() {
         button_0.setOnClickListener(v -> {
             this.data.add("0");
             screen.setText(this.data.getExpression());

@@ -7,10 +7,11 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Data data;
     private TextView screen;
@@ -39,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.init();
-        this.listener();
+
+        this.initState();
+        this.initListeners();
     }
 
     @Override
@@ -74,7 +76,53 @@ public class MainActivity extends AppCompatActivity {
         screen.setText(instanceState.getString("EXPRESSION"));
     }
 
-    private void init() {
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == this.button_0.getId())
+            this.data.add("0");
+        else if (id == this.button_1.getId())
+            this.data.add("1");
+        else if (id == this.button_2.getId())
+            this.data.add("2");
+        else if (id == this.button_3.getId())
+            this.data.add("3");
+        else if (id == this.button_4.getId())
+            this.data.add("4");
+        else if (id == this.button_5.getId())
+            this.data.add("5");
+        else if (id == this.button_6.getId())
+            this.data.add("6");
+        else if (id == this.button_7.getId())
+            this.data.add("7");
+        else if (id == this.button_8.getId())
+            this.data.add("8");
+        else if (id == this.button_9.getId())
+            this.data.add("9");
+        else if (id == this.buttonAdd.getId())
+            this.data.add("+");
+        else if (id == this.buttonSubtract.getId())
+            this.data.add("-");
+        else if (id == this.buttonMultiply.getId())
+            this.data.add("*");
+        else if (id == this.buttonDivide.getId())
+            this.data.add("/");
+        else if (id == this.buttonPoint.getId())
+            this.data.add(".");
+        else if (id == this.buttonClear.getId())
+            this.data.clear();
+        else if (id == this.buttonBackspace.getId())
+            this.data.backspace();
+        else if (id == this.buttonMemory.getId())
+            this.data.setMemory(this.data.getExpression());
+        else if (id == this.buttonRestore.getId())
+            this.data.restore();
+        else if (id == this.buttonEqual.getId())
+            this.data.compute();
+        screen.setText(this.data.getExpression());
+    }
+
+    private void initState() {
         this.data = new Data();
         this.screen = findViewById(R.id.view_screen);
         this.button_0 = findViewById(R.id.button_0);
@@ -99,86 +147,26 @@ public class MainActivity extends AppCompatActivity {
         this.buttonEqual = findViewById(R.id.button_equal);
     }
 
-    private void listener() {
-        button_0.setOnClickListener(v -> {
-            this.data.add("0");
-            screen.setText(this.data.getExpression());
-        });
-        button_1.setOnClickListener(v -> {
-            this.data.add("1");
-            screen.setText(this.data.getExpression());
-        });
-        button_2.setOnClickListener(v -> {
-            this.data.add("2");
-            screen.setText(this.data.getExpression());
-        });
-        button_3.setOnClickListener(v -> {
-            this.data.add("3");
-            screen.setText(this.data.getExpression());
-        });
-        button_4.setOnClickListener(v -> {
-            this.data.add("4");
-            screen.setText(this.data.getExpression());
-        });
-        button_5.setOnClickListener(v -> {
-            this.data.add("5");
-            screen.setText(this.data.getExpression());
-        });
-        button_6.setOnClickListener(v -> {
-            this.data.add("6");
-            screen.setText(this.data.getExpression());
-        });
-        button_7.setOnClickListener(v -> {
-            this.data.add("7");
-            screen.setText(this.data.getExpression());
-        });
-        button_8.setOnClickListener(v -> {
-            this.data.add("8");
-            screen.setText(this.data.getExpression());
-        });
-        button_9.setOnClickListener(v -> {
-            this.data.add("9");
-            screen.setText(this.data.getExpression());
-        });
-        buttonAdd.setOnClickListener(v -> {
-            this.data.add("+");
-            screen.setText(this.data.getExpression());
-        });
-        buttonSubtract.setOnClickListener(v -> {
-            this.data.add("-");
-            screen.setText(this.data.getExpression());
-        });
-        buttonMultiply.setOnClickListener(v -> {
-            this.data.add("*");
-            screen.setText(this.data.getExpression());
-        });
-        buttonDivide.setOnClickListener(v -> {
-            this.data.add("/");
-            screen.setText(this.data.getExpression());
-        });
-        buttonPoint.setOnClickListener(v -> {
-            this.data.add(".");
-            screen.setText(this.data.getExpression());
-        });
-        buttonClear.setOnClickListener(v -> {
-            this.data.clear();
-            screen.setText(this.data.getExpression());
-        });
-        buttonBackspace.setOnClickListener(v -> {
-            this.data.backspace();
-            screen.setText(this.data.getExpression());
-        });
-        buttonMemory.setOnClickListener(v -> {
-            this.data.setMemory(this.data.getExpression());
-            screen.setText(this.data.getExpression());
-        });
-        buttonRestore.setOnClickListener(v -> {
-            this.data.restore();
-            screen.setText(this.data.getExpression());
-        });
-        buttonEqual.setOnClickListener(v -> {
-            this.data.compute();
-            screen.setText(this.data.getExpression());
-        });
+    private void initListeners() {
+        this.button_0.setOnClickListener(this);
+        this.button_1.setOnClickListener(this);
+        this.button_2.setOnClickListener(this);
+        this.button_3.setOnClickListener(this);
+        this.button_4.setOnClickListener(this);
+        this.button_5.setOnClickListener(this);
+        this.button_6.setOnClickListener(this);
+        this.button_7.setOnClickListener(this);
+        this.button_8.setOnClickListener(this);
+        this.button_9.setOnClickListener(this);
+        this.buttonAdd.setOnClickListener(this);
+        this.buttonSubtract.setOnClickListener(this);
+        this.buttonMultiply.setOnClickListener(this);
+        this.buttonDivide.setOnClickListener(this);
+        this.buttonPoint.setOnClickListener(this);
+        this.buttonClear.setOnClickListener(this);
+        this.buttonBackspace.setOnClickListener(this);
+        this.buttonMemory.setOnClickListener(this);
+        this.buttonRestore.setOnClickListener(this);
+        this.buttonEqual.setOnClickListener(this);
     }
 }

@@ -10,7 +10,7 @@ class Data {
     }
 
     void add(String s) {
-        if (s.length() > 0)
+        if (s.length() > 0 && this.expression.length() < 32)
             this.expression.append(s);
     }
 
@@ -28,7 +28,7 @@ class Data {
     void clear() { this.expression.setLength(0); }
 
     void restore() {
-        if (this.memory.length() > 0)
+        if (this.memory.length() > 0 && (this.memory.length() + this.expression.length()) < 32)
         this.expression.append(this.memory);
     }
 

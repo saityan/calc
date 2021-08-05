@@ -15,6 +15,8 @@ class Data {
 
     void add(String s) {
         if (s.length() > 0 && this.expression.length() < 32) {
+            if (this.getExpression().equals("Infinity"))
+                return;
             if (!isDigitLast() && s.matches("[*/+.-]"))
                 return;
             if (s.equals(".") && !isPointEligible())
@@ -45,21 +47,46 @@ class Data {
                     if (sample.get(i).matches("[*/]")) {
                         double a = Double.parseDouble(sample.get(i - 1));
                         double b = Double.parseDouble(sample.get(i + 1));
-                        double result;
+                        double result = 0;
                         if (sample.get(i).equals("*")) {
                             result = a * b;
                             sample.set(i - 1, String.valueOf(result));
                             sample.remove(i + 1);
                             sample.remove(i);
-                            continue;
+                        }
+                        else if (sample.get(i).equals("/")) {
+                            if (b == 0.0) {
+                                this.expression.setLength(0);
+                                this.expression.append("Infinity");
+                                return;
+                            }
+                            result = a / b;
+                            sample.set(i - 1, String.valueOf(result));
+                            sample.remove(i + 1);
+                            sample.remove(i);
+                        }
+                    }
+                    else if (sample.get(i).matches("[+-]")) {
+                        double a = Double.parseDouble(sample.get(i - 1));
+                        double b = Double.parseDouble(sample.get(i + 1));
+                        double result = 0;
+                        if (sample.get(i).equals("+")) {
+                            result = a + b;
+                            sample.set(i - 1, String.valueOf(result));
+                            sample.remove(i + 1);
+                            sample.remove(i);
+                        }
+                        else if (sample.get(i).equals("-")) {
+                            result = a - b;
+                            sample.set(i - 1, String.valueOf(result));
+                            sample.remove(i + 1);
+                            sample.remove(i);
                         }
                     }
                 }
             }
             this.expression.setLength(0);
             this.expression.append(sample.get(0));
-
-            Log.d("result", sample.toString());
         }
     }
 

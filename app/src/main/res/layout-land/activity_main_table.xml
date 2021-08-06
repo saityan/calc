@@ -14,12 +14,15 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-            <com.google.android.material.button.MaterialButton
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/view_screen"
                 android:layout_span="7"
                 android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/textColor"
                 android:gravity="end|bottom"
-                android:text=""/>
+                android:textColorHint="@color/textColor"
+                android:hint="@string/hint"/>
     </TableRow>
 
     <TableRow

@@ -1,6 +1,5 @@
 package ru.geekbrains.calc;
 
-import android.util.Log;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -30,8 +29,13 @@ class Data {
     String getMemory () { return this.memory; }
 
     void setMemory (String memory) {
-        if (memory.length() > 0)
+        if (memory.length() > 0) {
+            if ((memory.charAt(0) == '-') || memory.equals("Infinity"))
+                return;
+            if (memory.substring(0, 1).matches("[*/+.-]"))
+                memory = memory.substring(1);
             this.memory = memory;
+        }
     }
 
     void compute() {
@@ -40,21 +44,30 @@ class Data {
                     "(?<=[\\d.])(?=[^\\d.])|(?<=[^\\d.])(?=[\\d.])")));
             if (sample.size() < 3)
                 return;
-            if (sample.get(sample.size() - 1).matches("[*/+-]"))
+            String last = sample.get(sample.size() - 1);
+            if (last.matches("[*/+-]"))
                 sample.removeLast();
-            while(sample.size() > 1) {
-                for (int i = 0; i < sample.size(); i ++) {
+            if (last.charAt(last.length() - 1) == '.') {
+                sample.set(sample.size() - 1, last.substring(0, last.length() - 1));
+            }
+            if (sample.getFirst().equals("-")) {
+                sample.remove(0);
+                String temp = "-" + sample.getFirst();
+                sample.set(0, temp);
+            }
+            search: while (sample.size() > 1) {
+                for (int i = 0; i < sample.size(); i++) {
                     if (sample.get(i).matches("[*/]")) {
                         double a = Double.parseDouble(sample.get(i - 1));
                         double b = Double.parseDouble(sample.get(i + 1));
-                        double result = 0;
+                        double result;
                         if (sample.get(i).equals("*")) {
                             result = a * b;
                             sample.set(i - 1, String.valueOf(result));
                             sample.remove(i + 1);
                             sample.remove(i);
-                        }
-                        else if (sample.get(i).equals("/")) {
+                            continue search;
+                        } else if (sample.get(i).equals("/")) {
                             if (b == 0.0) {
                                 this.expression.setLength(0);
                                 this.expression.append("Infinity");
@@ -64,29 +77,37 @@ class Data {
                             sample.set(i - 1, String.valueOf(result));
                             sample.remove(i + 1);
                             sample.remove(i);
+                            continue search;
                         }
                     }
-                    else if (sample.get(i).matches("[+-]")) {
+                }
+                for (int i = 0; i < sample.size(); i++) {
+                    if (sample.get(i).matches("[+-]")) {
                         double a = Double.parseDouble(sample.get(i - 1));
                         double b = Double.parseDouble(sample.get(i + 1));
-                        double result = 0;
+                        double result;
                         if (sample.get(i).equals("+")) {
                             result = a + b;
                             sample.set(i - 1, String.valueOf(result));
                             sample.remove(i + 1);
                             sample.remove(i);
-                        }
-                        else if (sample.get(i).equals("-")) {
+                            continue search;
+                        } else if (sample.get(i).equals("-")) {
                             result = a - b;
                             sample.set(i - 1, String.valueOf(result));
                             sample.remove(i + 1);
                             sample.remove(i);
+                            continue search;
                         }
                     }
                 }
             }
+            double result = Double.parseDouble(sample.get(0));
             this.expression.setLength(0);
-            this.expression.append(sample.get(0));
+            if (Math.ceil(result) == Math.floor(result))
+                this.expression.append((int) result);
+            else
+                this.expression.append(result);
         }
     }
 

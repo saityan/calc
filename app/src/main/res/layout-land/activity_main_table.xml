@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_columnSpan="7"
     android:gravity="center"
     android:orientation="vertical"
@@ -32,30 +32,44 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_1"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_2"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_2"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_3"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_3"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_memory"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_memory"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_restore"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_restore"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_subtract"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_subtract"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_backspace"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_backspace"/>
     </TableRow>
 
@@ -66,30 +80,44 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_4"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_4"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_5"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_5"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_6"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_6"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_divide"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_divide"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_multiply"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_multiply"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_add"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_add"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_equal"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_equal"/>
     </TableRow>
 
@@ -100,26 +128,38 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_7"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_7"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_8"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_8"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_9"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_9"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_0"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_0"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_point"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:text="@string/_point"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_clear"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2dp"
             android:layout_span="2"
             android:text="@string/_clear"/>
     </TableRow>

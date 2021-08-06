@@ -78,47 +78,68 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        int id = v.getId();
-        if (id == this.button_0.getId())
-            this.data.add("0");
-        else if (id == this.button_1.getId())
-            this.data.add("1");
-        else if (id == this.button_2.getId())
-            this.data.add("2");
-        else if (id == this.button_3.getId())
-            this.data.add("3");
-        else if (id == this.button_4.getId())
-            this.data.add("4");
-        else if (id == this.button_5.getId())
-            this.data.add("5");
-        else if (id == this.button_6.getId())
-            this.data.add("6");
-        else if (id == this.button_7.getId())
-            this.data.add("7");
-        else if (id == this.button_8.getId())
-            this.data.add("8");
-        else if (id == this.button_9.getId())
-            this.data.add("9");
-        else if (id == this.buttonAdd.getId())
-            this.data.add("+");
-        else if (id == this.buttonSubtract.getId())
-            this.data.add("-");
-        else if (id == this.buttonMultiply.getId())
-            this.data.add("*");
-        else if (id == this.buttonDivide.getId())
-            this.data.add("/");
-        else if (id == this.buttonPoint.getId())
-            this.data.add(".");
-        else if (id == this.buttonClear.getId())
-            this.data.clear();
-        else if (id == this.buttonBackspace.getId())
-            this.data.backspace();
-        else if (id == this.buttonMemory.getId())
-            this.data.setMemory(this.data.getExpression());
-        else if (id == this.buttonRestore.getId())
-            this.data.restore();
-        else if (id == this.buttonEqual.getId())
-            this.data.compute();
+        switch (v.getId()) {
+            case R.id.button_0:
+                this.data.add("0");
+                break;
+            case R.id.button_1:
+                this.data.add("1");
+                break;
+            case R.id.button_2:
+                this.data.add("2");
+                break;
+            case R.id.button_3:
+                this.data.add("3");
+                break;
+            case R.id.button_4:
+                this.data.add("4");
+                break;
+            case R.id.button_5:
+                this.data.add("5");
+                break;
+            case R.id.button_6:
+                this.data.add("6");
+                break;
+            case R.id.button_7:
+                this.data.add("7");
+                break;
+            case R.id.button_8:
+                this.data.add("8");
+                break;
+            case R.id.button_9:
+                this.data.add("9");
+                break;
+            case R.id.button_add:
+                this.data.add("+");
+                break;
+            case R.id.button_subtract:
+                this.data.add("-");
+                break;
+            case R.id.button_multiply:
+                this.data.add("*");
+                break;
+            case R.id.button_divide:
+                this.data.add("/");
+                break;
+            case R.id.button_point:
+                this.data.add(".");
+                break;
+            case R.id.button_clear:
+                this.data.clear();
+                break;
+            case R.id.button_backspace:
+                this.data.backspace();
+                break;
+            case R.id.button_memory:
+                this.data.setMemory(this.data.getExpression());
+                break;
+            case R.id.button_restore:
+                this.data.restore();
+                break;
+            case R.id.button_equal:
+                this.data.compute();
+                break;
+        }
         screen.setText(this.data.getExpression());
     }
 

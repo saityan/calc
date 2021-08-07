@@ -42,8 +42,6 @@ class Data {
         if (!isExpressionEmpty()) {
             LinkedList <String> sample = new LinkedList<>(Arrays.asList(this.getExpression().split(
                     "(?<=[\\d.])(?=[^\\d.])|(?<=[^\\d.])(?=[\\d.])")));
-            if (sample.size() < 3)
-                return;
             String last = sample.get(sample.size() - 1);
             if (last.matches("[*/+-]"))
                 sample.removeLast();
@@ -54,6 +52,8 @@ class Data {
                 sample.remove(0);
                 String temp = "-" + sample.getFirst();
                 sample.set(0, temp);
+            if (sample.size() < 3)
+                return;
             }
             search: while (sample.size() > 1) {
                 for (int i = 0; i < sample.size(); i++) {
